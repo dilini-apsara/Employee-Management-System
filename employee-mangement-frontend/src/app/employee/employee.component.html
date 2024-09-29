@@ -1,0 +1,37 @@
+<div class="container">
+  <h3 class="mb-5 border-bottom pb-2 text-center">Employee Details</h3>
+  <form #frmModel="ngForm" (ngSubmit)="saveEmployee(frmModel)">
+    <div class="mb-3">
+      <label class="form-label" for="txt-id">Employee Id</label>
+      <input name="id" id="txt-id" [(ngModel)]="employee.id"
+             required pattern="^E\d{3}$"
+             class="form-control" type="text"
+             placeholder="Eg: E001">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="txt-name">Employee Name</label>
+      <input name="name" id="txt-name" [(ngModel)]="employee.name"
+             required pattern="^[A-Za-z ]+$"
+             class="form-control" type="text" placeholder="Eg: Dilini Apsara">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="txt-country">Employee Country</label>
+      <input name="country" id="txt-country" [(ngModel)]="employee.country"
+             required pattern="^[A-Za-z0-9 ]+$"
+             class="form-control" type="text" placeholder="Eg:  Sri Lanka">
+    </div>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary">Save</button>
+      <button type="reset" class="btn btn-warning">Clear</button>
+    </div>
+
+  </form>
+
+  <hr>
+
+  <button class="btn btn-primary btn-lg btn-lg" (click)="AllEmployees()">Get All Employee Details</button>
+
+</div>
